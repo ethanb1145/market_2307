@@ -18,7 +18,7 @@ class Vendor
     if @inventory.include?(item)
       @inventory[item][:quantity] += quantity
     else
-      @inventory[item] = { quantity: quantity, value: 0}
+      @inventory[item] = { quantity: 0 }
     end
   end
 end
