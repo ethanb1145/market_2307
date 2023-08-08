@@ -34,8 +34,11 @@ class Market
     total = {}
     @vendors.each do |vendor|
       vendor.inventory.each do |item, quantity|
-        total[item] ||- { quantity: 0, vendors: [] }
+        total[item] ||= { quantity: 0, vendors: [] }
+        total[item][:quantity] += quantity
+        total[item][:vendors] << vendor
       end
     end
+    total
   end
 end
