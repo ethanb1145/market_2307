@@ -15,7 +15,7 @@ RSpec.describe Vendor do
   end
 
   describe "#initialize" do 
-    it "gives the inventory of the vendor" do 
+    it "gives the inventory of the vendor when empty" do 
       expect(@vendor.inventory).to eq({})
     end
   end
