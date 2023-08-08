@@ -13,11 +13,11 @@ RSpec.describe Market do
   end
 
   describe "#initialize" do 
-    it "gives the name of the vendor" do 
+    it "gives the name of the market" do 
       expect(@market.name).to eq("South Pearl Street Farmers Market")
     end
 
-    it "gives the name of the vendor" do 
+    it "gives a list of the vendors in the market" do 
       expect(@market.vendors).to eq([])
     end
   end
