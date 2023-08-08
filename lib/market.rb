@@ -43,6 +43,10 @@ class Market
   end
 
   def overstocked_items
-    
+    overstocked_items = []
+
+    items.total_inventory each do |item, info|
+      if info[:vendors].count > 1 && info[:quantity] > 50
+    end
   end
 end
