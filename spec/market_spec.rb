@@ -11,3 +11,15 @@ RSpec.describe Market do
     @item3 = Item.new({name: "Peach-Raspberry Nice Cream", price: "$5.30"})
     @item4 = Item.new({name: "Banana Nice Cream", price: "$4.25"})
   end
+
+  describe "#initialize" do 
+    it "gives the name of the vendor" do 
+      expect(@market.name).to eq("South Pearl Street Farmers Market")
+    end
+
+    it "gives the name of the vendor" do 
+      expect(@market.vendors).to eq([])
+    end
+  end
+end
+
