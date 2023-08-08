@@ -21,4 +21,8 @@ class Market
       vendor.inventory.include?(item)
     end
   end
+
+  def potential_revenue
+    
+  end
 end
