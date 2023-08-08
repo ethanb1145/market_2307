@@ -5,4 +5,12 @@ class Vendor
     @name = name
     @inventory = {}
   end
+
+  def check_stock(item)
+    if @inventory.include?(item)
+      { quantity: @inventory[item][:quantity], value: @inventory[item][:value] }
+    else
+      0
+    end
+  end
 end
