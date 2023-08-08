@@ -10,9 +10,7 @@ RSpec.describe Item do
     it "gives the name of the item" do 
       expect(@item2.name).to eq("Tomato")
     end
-  end
-
-  describe "#initialize" do 
+    
     it "gives the price of the item" do 
       expect(@item2.price).to eq(0.5)
     end
