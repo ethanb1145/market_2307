@@ -14,7 +14,11 @@ class Vendor
     end
   end
 
-  # def stock(item, quantity)
-  #   @inventory[item][:quantity] += quantity
-  # end
+  def stock(item, quantity)
+    if @inventory.include?(item)
+      @inventory[item][:quantity] += quantity
+    else
+      @inventory[item] = { quantity: quantity, value: 0}
+    end
+  end
 end
