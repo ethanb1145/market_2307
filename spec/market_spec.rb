@@ -81,5 +81,21 @@ RSpec.describe Market do
       expect(@vendor3.potential_revenue).to eq(48.75)
     end
   end
+
+  describe "#sorted_item_list" do 
+    it "returns an array of the names of all items the Vendors have in stock, sorted alphabetically" do
+      @market.add_vendor(@vendor1)
+      @market.add_vendor(@vendor2)
+      @market.add_vendor(@vendor3)
+
+      @vendor1.stock(@item1, 35)
+      @vendor1.stock(@item2, 7)
+      @vendor2.stock(@item3, 25)
+      @vendor2.stock(@item4, 50)
+      @vendor3.stock(@item1, 65)
+
+      expect(@market.sorted_item_list).to eq(["Banana Nice Cream", "Peach", "Peach-Raspberry Nice Cream", "Tomato"])
+    end
+  end
 end
 
