@@ -29,4 +29,8 @@ class Market
     sorted_item_names = item_names.uniq.sort
     sorted_item_names
   end
+
+  def total_inventory
+    
+  end
 end
