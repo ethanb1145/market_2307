@@ -106,9 +106,12 @@ RSpec.describe Market do
 
       @vendor1.stock(@item1, 35)
       @vendor3.stock(@item1, 65)
+      @vendor2.stock(@item2, 10)
+      @vendor3.stock(@item2, 20)
 
       expect(@market.total_inventory).to eq({
-        @item1 => { quantity: 100, vendors: [@vendor1, @vendor3] }
+        @item1 => { quantity: 100, vendors: [@vendor1, @vendor3] },
+        @item2 => { quantity: 30, vendors: [@vendor2, @vendor3] }
       })
     end
   end
@@ -121,7 +124,8 @@ RSpec.describe Market do
 
       @vendor1.stock(@item1, 35)
       @vendor2.stock(@item2, 10)
-      @vendor3.stock(@item1, 65)
+      @vendor3.stock(@item1, 25)
+      @vendor3.stock(@item2, 20)
 
       expect(@market.overstocked_items).to eq([@item1])
     end
