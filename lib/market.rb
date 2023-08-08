@@ -31,6 +31,11 @@ class Market
   end
 
   def total_inventory
-    
+    total = {}
+    @vendors.each do |vendor|
+      vendor.inventory.each do |item, quantity|
+        total[item] ||- { quantity: 0, vendors: [] }
+      end
+    end
   end
 end
